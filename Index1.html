@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jastip & Parcel Terpercaya - Website Resmi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Times New Roman', serif; background-color: #f8f9fa; }
+        .hero { position: relative; height: 100vh; overflow: hidden; }
+        .hero img { width: 100%; height: 100%; object-fit: cover; }
+        .hero .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .hero h1 { font-size: 4em; animation: fadeIn 2s; }
+        .section { padding: 60px 0; }
+        .card { transition: transform 0.3s; cursor: pointer; }
+        .card:hover { transform: scale(1.05); }
+        .modal-content { border-radius: 10px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; cursor: pointer; }
+        .news-card { margin-bottom: 20px; }
+        .footer { background: #343a40; color: white; padding: 20px 0; text-align: center; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { animation: fadeIn 1s; }
+        .slider { position: relative; }
+        .slider img { display: none; }
+        .slider img.active { display: block; }
+        .slider .prev, .slider .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; }
+        .slider .prev { left: 10px; }
+        .slider .next { right: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Header & Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=50&h=50&fit=crop" alt="" style="border-radius: 50%; margin-right: 10px;">
+                Jastip & Parcel Terpercaya
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profilDropdown" role="button" data-bs-toggle="dropdown">Profil</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#visi-misi">Katalog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section dengan Slider -->
+    <section id="home" class="hero">
+        <div class="slider">
+            <img src="https://www.gotravelly.com/blog/wp-content/uploads/2020/10/bakpia.jpg" class="active" alt="Slider 1">
+            <img src="https://www.prestisa.com/wp-content/uploads/2016/06/7.950K.jpg" alt="Slider 2">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m61xslz4ys5y8d" alt="Slider 3">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <div class="overlay fade-in">
+            <div>
+                <h1>Selamat Datang</h1>
+                <p>Jastip & Parcel Terpercaya, Aman, dan Berkualitas</p>
+                <a href="#profil" class="btn btn-primary btn-lg">Klik Untuk Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Sekolah -->
+    <section id="profil" class="section bg-white">
+        <div class="container">
+            <h2 class="text-center mb-4">Tentang Jastip & Parcel</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 id="visi-misi">Jasa Titip Bakpia Yogyakarta🥮</h3>
+                    <p><strong></strong> Kami menyediakan layanan titipan bakpia Yogyakarta dari berbagai toko favorit Anda. Setiap pesanan akan dibelikan sesuai permintaan, dikemas dengan aman, lalu dikirimkan menuju Cirebon dan diteruskan langsung ke alamat Anda. Praktis, cepat, dan terpercaya, cocok bagi Anda yang rindu cita rasa bakpia asli Jogja tanpa perlu datang langsung.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 id="sejarah">Parcel</h3>
+                    <p>Menyediakan berbagai pilihan parcel Lebaran ✨ dan Natal 🎄 yang dirangkai dengan penuh kehangatan dan kesan premium. Setiap paket dibuat dengan kombinasi produk terbaik, tampilan yang rapi, serta sentuhan estetik yang cocok untuk hadiah keluarga, rekan kerja, hingga relasi bisnis. Siap kirim dan dapat dikustom sesuai kebutuhan Anda untuk membuat momen spesial menjadi lebih bermakna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita & Pengumuman (Klik untuk Modal Detail) -->
+    <section id="berita" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Akses Katalog</h2>
+            <div class="row">
+  <div class="col-md-4">
+  <div class="card news-card" onclick="window.open('https://drive.google.com/file/d/1boIXRJbLY4mRLX7_GOzrqRKwDAgJLELX/view?usp=drive_link', '_blank')">
+      <img src="https://2.bp.blogspot.com/_TSWKiHJ6U50/TQISk9rKKFI/AAAAAAAAACQ/OTcO2xBO2Rk/s1600/bakpia.jpg" class="card-img-top" alt="Bakpia">
+      <div class="card-body">
+          <h5 class="card-title">Katalog Jastip Bakpia</h5>
+          <p class="card-text">Klik untuk lihat katalog.</p>
+      </div>
+  </div>
+</div>
+  <div class="col-md-4">
+  <div class="card news-card" onclick="window.open('https://drive.google.com/file/d/1boIXRJbLY4mRLX7_GOzrqRKwDAgJLELX/view?usp=drive_link', '_blank')">
+      <img src="https://2.bp.blogspot.com/_TSWKiHJ6U50/TQISk9rKKFI/AAAAAAAAACQ/OTcO2xBO2Rk/s1600/bakpia.jpg" class="card-img-top" alt="Bakpia">
+      <div class="card-body">
+          <h5 class="card-title">Katalog</h5>
+          <p class="card-text">Klik untuk lihat katalog.</p>
+      </div>
+  </div>
+</div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section id="galeri" class="section bg-white">
+        <div class="container">
+            <h2 class="text-center mb-4">Galeri Foto Produk</h2>
+            <div class="row gallery">
+                <div class="col-md-3">
+                    <a href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" data-lightbox="gallery">
+                        <img src="https://serikatnews.com/wp-content/uploads/2022/12/bakpia.jpg" alt="Galeri">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" data-lightbox="gallery">
+                        <img src="https://www.gotravelly.com/blog/wp-content/uploads/2020/10/bakpia.jpg" alt="Galeri">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop" data-lightbox="gallery">
+                        <img src="https://down-id.img.susercontent.com/file/9c59321a288a8b769f69a905c138c011" alt="Galeri">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" data-lightbox="gallery">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m61xslz4ys5y8d" alt="Galeri">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Kontak Kami</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Alamat:</strong> Kasihan, Bantul, Yogyakarta & Pangurangan, Cirebon</p>
+                    <p><strong>Telepon:</strong> +62895-1692-8617</p>
+                    <form>
+                              <button onclick="window.open('https://wa.me/6289516928617?text=Halo!%20saya%20ingin%20order%20bakpia%20dan%20parcel%20', '_blank')">Chat WhatsApp Sekarang</button>
+    </section>  
+    <div class="container" style="margin-top: 20px;">
+    <h4 style="margin-left: 20px;">Lokasi</h4>
+
+    <div style="
+        width: 40%; 
+        margin-left: 20px; 
+        margin-top: 15px; 
+        background: #080101;
+        border: 1px solid #ddd; 
+        border-radius: 10px; 
+        padding: 5px;
+    ">
+        <iframe 
+            src="https://www.google.com/maps?q=-6.629355,108.448269&z=15&output=embed"
+            width="100%" 
+            height="250" 
+            style="border:0; border-radius: 8px;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Jastip & Parcel Terpercaya.</p>
+            <button onclick="window.open('https://wa.me/6289516928617?text=Halo!%20saya%20ingin%20order%20bakpia%20dan%20parcel%20', '_blank')">Ikuti Kami : Instagram</button>
+        </div>
+    </footer>
+
+    <!-- Modal untuk Detail Berita -->
+    <div class="modal fade" id="newsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="newsModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slider img');
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 3000); // Auto slide every 3 seconds
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+
+        function showNewsDetail(title, content) {
+            document.getElementById('newsModalTitle').innerText = title;
+            document.getElementById('newsModalBody').innerText = content;
+            new bootstrap.Modal(document.getElementById('newsModal')).show();
+        }
+    </script>
+</body>
+</html>
